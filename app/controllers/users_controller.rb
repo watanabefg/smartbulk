@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @latest_data = Record.where(user_id: current_user.id).order('created_at DESC').first
+    unless @latest_data
+      @latest_data = Record.new(user_id: current_user.id, weight: 0.0, fatPer: 0.0)
+    end
   end
 
   def new
