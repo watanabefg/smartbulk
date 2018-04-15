@@ -1,0 +1,47 @@
+<%= render 'users/latest_userdata' %>
+<div class="col-xs-12">
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="#">1W</a></li>
+    <li><a href="#">1M</a></li>
+    <li><a href="#">3M</a></li>
+    <li><a href="#">6M</a></li>
+  </ul>
+  <div id="chart">
+    <p>chart<br>目標と記録の折れ線</p>
+  </div>
+  <div id="history">
+    <h4>History</h4>
+    <table class="table table-bordered table-condensed">
+      <tr>
+        <th class="text-center">Date</th>
+        <th class="text-center">Weight</th>
+        <th class="text-center">Change</th>
+        <th class="text-center">Percentage</th>
+      </tr>
+      <tr>
+        <td>1/1</td>
+        <td class="text-right">67.3</td>
+        <td class="text-right">+0.1</td>
+        <td class="text-right">+0.1%</td>
+      </tr>
+      <tr>
+        <td>12/30</td>
+        <td class="text-right">67.2</td>
+        <td class="text-right">+0.9</td>
+        <td class="text-right">+1.0%</td>
+      </tr>
+      <tr>
+        <td>12/22</td>
+        <td class="text-right">66.3</td>
+        <td class="text-right">+0.3</td>
+        <td class="text-right">+0.0%</td>
+      </tr>
+      <tr>
+        <td>12/21</td>
+        <td class="text-right">66.0</td>
+        <td class="text-right">+0.3</td>
+        <td class="text-right">-0.1%</td>
+      </tr>
+    </table>    
+  </div>
+</div>
