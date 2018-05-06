@@ -13,21 +13,21 @@ class ApplicationController < ActionController::Base
 
   ###########################################
   #　関数名：　  recordSaveBulk
-  #　引数1：　   weight   体重
-  #　引数2：　   fatPer   体脂肪
+  #　引数1：　   weight       体重
+  #　引数2：　   bodyFatPer   体脂肪
   #　処理：　　　体重と体脂肪をテーブルに登録する。引数が0であれば終了する
   #　関連table： Record
   ###########################################  
-  def recordSaveBulk(weight, fatPer)
+  def recordSaveBulk(weight, bodyFatPer)
 
     # 引数の値が0であれば登録せずに終了
-    if((weight == 0) || (fatPer == 0))
+    if((weight == 0) || (bodyFatPer == 0))
       logger.info("[recordSaveBulk]argument = 0")
       return 
     end
     
     # Recordテーブルに登録
-    bulkParam = {weight: weight, fatPer: fatPer}
+    bulkParam = {weight: weight, fatPer: bodyFatPer}
     @record = current_user.records.build(bulkParam)
     
     if @record.save
