@@ -2,16 +2,16 @@
 
 one:
   name: MyString
-  email: MyString
+  email: MyString@example.com
   password_digest: MyString
-  goalWeight: 1
-  goalFatPer: 1
+  goalWeight: 54.3
+  goalFatPer: 18.7
   purpose: MyString
 
 two:
   name: MyString
-  email: MyString
+  email: MyS
   password_digest: MyString
-  goalWeight: 1
-  goalFatPer: 1
+  goalWeight: 59.2
+  goalFatPer: 19.0
   purpose: MyString

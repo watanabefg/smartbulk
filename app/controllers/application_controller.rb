@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     # 引数の値が0であれば登録せずに終了
     if((weight == 0) || (bodyFatPer == 0))
       logger.info("[recordSaveBulk]argument = 0")
-      return 
+      return false
     end
     
     # Recordテーブルに登録
@@ -32,8 +32,10 @@ class ApplicationController < ActionController::Base
     
     if @record.save
       logger.info("[recordSaveBulk]record.save is success.")
+      return true
     else
       logger.error("[recordSaveBulk]record.save is fail.")
+      return false
     end    
   end  
 

@@ -1,13 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  date: 2018-04-15 11:18:14
-  weight: 1.5
-  fatPer: 1.5
-
-two:
-  user: two
-  date: 2018-04-15 11:18:14
-  weight: 1.5
-  fatPer: 1.5
+  user_id: 1
+  weight: 60.5
+  fatPer: 12.5

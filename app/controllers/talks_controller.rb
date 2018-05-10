@@ -27,7 +27,12 @@ class TalksController < ApplicationController
           when 'BodyfatpercentageManagement'
             weight = request.session.attributes[:weight]
             bodyfatpercentage = request.slots[:bodyfatpercentage][:value]
-            # TODO: DB登録処理を入れる
+            loop do
+              # TODO: user_idはアカウントリンキングで取得しておく
+              user_id = 1
+              record = Record.new(:user_id => user_id, :weight => weight, :fatPer => bodyfatpercentage)
+              break if record.save
+            end 
             response.add_speech("#{bodyfatpercentage}パーセントですね。登録しました。マイページにアクセスすると履歴が確認できます。")
         end
     end
