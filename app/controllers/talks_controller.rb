@@ -18,6 +18,7 @@ class TalksController < ApplicationController
             response.add_speech("体重は何キログラムですか？")
             session_end = false
           when 'AMAZON.NoIntent'
+          when 'AMAZON.CancelIntent'
             response.add_speech("ご利用ありがとうございました。またスマートバルクをご利用ください。")
           when 'WeightManagement'
             weight = request.slots[:weight][:value]
