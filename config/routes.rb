@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  use_doorkeeper
+  devise_for :users
   root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'
