@@ -38,6 +38,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'doorkeeper'
 gem 'oauth2'
+gem 'omniauth-oauth2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

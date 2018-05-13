@@ -11,4 +11,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create]
   resources :records, only: [:create, :destroy] 
   resources :talks, only: %i(create)
+  # config/routes.rb
+  namespace :api do
+    namespace :v1 do
+      # another api routes
+      get '/me' => "credentials#me"
+    end
+  end
 end

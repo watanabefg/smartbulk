@@ -1,3 +1,5 @@
+#class Api::V1::TalksController < Api::V1::ApiController
+  #before_action :doorkeeper_authorize! # Require access token for all
 class TalksController < ApplicationController
   protect_from_forgery :except => [:create]
 
