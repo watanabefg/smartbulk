@@ -1,16 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include SessionsHelper
-  
   private
 
-  def require_user_logged_in
-    unless logged_in?
-      redirect_to login_url
-    end
-  end  
-
+  def configure_permitted_parameters
+    # TODO: strong parameterになっているので、
+    # サインアップ時に入力が必要な入力欄を最低限セットする
+    added_attrs = [ :name, :email, :password, :password_confirmation　]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
+  end
+  
   ###########################################
   #　関数名：　  recordSaveBulk
   #　引数1：　   weight       体重
