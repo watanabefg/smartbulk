@@ -39,6 +39,9 @@ gem 'omniauth'
 gem 'doorkeeper'
 gem 'oauth2'
 gem 'omniauth-oauth2'
+# Devise
+gem 'devise'
+gem 'omniauth-twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
