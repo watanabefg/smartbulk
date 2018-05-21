@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
-  before_action :require_user_logged_in
-
+  before_action :authenticate_user!, only: [:create, :destroy]
+  
   def create
     @record = current_user.records.build(record_params)
     if @record.save
@@ -23,10 +23,10 @@ class RecordsController < ApplicationController
     params.require(:record).permit(:weight, :fatPer)
   end
 
-  def correct_user
-    @record = current_user.records.find_by(id: params[:id])
-    unless @record
-      redirect_to root_url
-    end
-  end  
+  # def correct_user
+  #   @record = current_user.records.find_by(id: params[:id])
+  #   unless @record
+  #     redirect_to root_url
+  #   end
+  # end  
 end
