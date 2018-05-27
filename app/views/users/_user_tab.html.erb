@@ -1,0 +1,39 @@
+<div class="tabs">
+    <input id="all" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="all">1W</label>
+    <input id="month" type="radio" name="tab_item">
+    <label class="tab_item" for="month">1M</label>
+    <input id="threemonth" type="radio" name="tab_item">
+    <label class="tab_item" for="threemonth">3M</label>
+    <input id="sixmonth" type="radio" name="tab_item">
+    <label class="tab_item" for="sixmonth">6M</label>
+    
+    <!--1Week-->
+    <div class="tab_content" id="all_content">
+      <div id="chart">
+        <canvas id="week-chart" style="width: 100%; height:200px;"></canvas>
+        <%= render 'users/chart' %>
+      </div>
+    </div>
+    <!--1Month-->
+    <div class="tab_content" id="month_content">
+      <div id="chart">
+        <canvas id="month-chart" style="width: 100%; height:200px;"></canvas>
+        <%= render 'users/chart' %>
+      </div>
+    </div>
+    <!--3Month-->
+    <div class="tab_content" id="threemonth_content">
+      <div id="chart">
+        <canvas id="month3-chart" style="width: 100%; height:200px;"></canvas>
+        <%= render 'users/chart' %>
+      </div>
+    </div>
+    <!--6month-->
+    <div class="tab_content" id="sixmonth_content">
+      <div id="chart">
+        <canvas id="month6-chart" style="width: 100%; height:200px;"></canvas>
+        <%= render 'users/chart' %>
+      </div>
+    </div>
+</div>

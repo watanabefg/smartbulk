@@ -1,15 +1,6 @@
 <%= render 'users/latest_userdata' %>
 <div class="col-xs-12">
-  <ul class="nav nav-pills nav-justified">
-    <li class="active"><a href="#">1W</a></li>
-    <li><a href="#">1M</a></li>
-    <li><a href="#">3M</a></li>
-    <li><a href="#">6M</a></li>
-  </ul>
-  <div id="chart">
-    <canvas id="sample-chart" style="width: 100%; height:200px;"></canvas>
-    <p>chart<br>目標と記録の折れ線</p>
-  </div>
+  <%= render 'users/user_tab' %>
   <div id="history">
     <h4>History</h4>
     <table class="table table-bordered table-condensed">

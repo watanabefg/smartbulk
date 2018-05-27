@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+24.times do |i|
+  Record.create(user_id:1, weight:44, fatPer: 18)
+  Record.create(user_id:1, weight:47, fatPer: 19)
+  Record.create(user_id:1, weight:46, fatPer: 18)
+  Record.create(user_id:1, weight:48, fatPer: 20)
+  Record.create(user_id:1, weight:50, fatPer: 21)
+  Record.create(user_id:1, weight:48, fatPer: 19)
+end

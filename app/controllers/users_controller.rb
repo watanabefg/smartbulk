@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     unless @latest_data
       @latest_data = Record.new(user_id: current_user.id, weight: 0.0, fatPer: 0.0)
     end
+    # ユーザーの登録しているレコード情報を全て取得
+    @all_usr_data = Record.where(user_id: current_user.id).order('created_at DESC')
+    
   end
 
   def new
