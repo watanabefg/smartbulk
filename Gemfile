@@ -33,14 +33,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'alexa_rubykit'
+#gem 'alexa-rails'
+#gem 'alexa'
+
 # 認証機能を使うためのgem
 gem 'devise'
 gem 'omniauth'
 gem 'doorkeeper'
 gem 'oauth2'
 gem 'omniauth-oauth2'
-# Devise
-gem 'devise'
+
 gem 'omniauth-twitter'
 
 # Use Capistrano for deployment

@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  #get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create]
   resources :records, only: [:create, :destroy] 
-  resources :talks, only: %i(create)
   
   # config/routes.rb
   namespace :api do
@@ -19,4 +17,7 @@ Rails.application.routes.draw do
       get '/me' => "credentials#me"
     end
   end
+  
+  #mount Alexa::Engine, at: "/alexa"
+  resources :talks, only: %i(create)
 end

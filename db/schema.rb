@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521114807) do
+ActiveRecord::Schema.define(version: 20180527090539) do
+
+  create_table "alexa_usages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "alexa_user_id"
+    t.string  "intent_name"
+    t.integer "count",         default: 0
+    t.index ["alexa_user_id"], name: "fk_rails_55cb2ed47e", using: :btree
+  end
+
+  create_table "alexa_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "amazon_id"
+    t.index ["amazon_id"], name: "index_alexa_users_on_amazon_id", using: :btree
+  end
 
   create_table "oauth_access_grants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "resource_owner_id",               null: false
@@ -86,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180521114807) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "alexa_usages", "alexa_users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "records", "users"

@@ -9,11 +9,23 @@ class TalksController < ApplicationController
     
     response = AlexaRubykit::Response.new
     session_end = true
-    
+   
     case request.type
       when 'LAUNCH_REQUEST'
-        response.add_speech("スマートバルクへようこそ。体重と体脂肪率の管理をします。管理をしますか？")
-        session_end = false
+        # アカウントリンクの確認
+        user = request.session.user
+        
+        if !user.has_key?(:accessToken) then
+          # アクセストークンが未定義の場合はアカウントリンク設定を促す
+          response.add_card("LinkAccount")
+        else
+          accessToken = request.session.user.accessToken
+          # Login with AmazonのリクエストURLにアクセストークンを付与
+          url = 'https://api.amazon.com/user/profile?access_token=' + accessToken;
+          # httpsモジュールでリクエストを送出
+          response.add_speech("スマートバルクへようこそ。体重と体脂肪率の管理をします。管理をしますか？")
+          session_end = false
+        end
       when 'INTENT_REQUEST'
         case request.intent[:name]
           when 'AMAZON.YesIntent'
