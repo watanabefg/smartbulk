@@ -9,30 +9,30 @@
     <label class="tab_item" for="sixmonth">6M</label>
     
     <!--1Week-->
-    <div class="tab_content" id="all_content">
+    <div class="tab_content" id="week_content">
       <div id="chart">
-        <canvas id="week-chart" style="width: 100%; height:200px;"></canvas>
+        <canvas id="week-chart" width="100%" height="35"></canvas>
         <%= render 'users/chart' %>
       </div>
     </div>
     <!--1Month-->
     <div class="tab_content" id="month_content">
       <div id="chart">
-        <canvas id="month-chart" style="width: 100%; height:200px;"></canvas>
+        <canvas id="month-chart" style="width: 100%; height:100%;"></canvas>
         <%= render 'users/chart' %>
       </div>
     </div>
     <!--3Month-->
     <div class="tab_content" id="threemonth_content">
       <div id="chart">
-        <canvas id="month3-chart" style="width: 100%; height:200px;"></canvas>
+        <canvas id="month3-chart" style="width: 100%; height:100%;"></canvas>
         <%= render 'users/chart' %>
       </div>
     </div>
     <!--6month-->
     <div class="tab_content" id="sixmonth_content">
       <div id="chart">
-        <canvas id="month6-chart" style="width: 100%; height:200px;"></canvas>
+        <canvas id="month6-chart" width="100%" height="35"></canvas>
         <%= render 'users/chart' %>
       </div>
     </div>

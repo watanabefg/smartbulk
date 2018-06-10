@@ -11,8 +11,8 @@ class UsersController < ApplicationController
       @latest_data = Record.new(user_id: current_user.id, weight: 0.0, fatPer: 0.0)
     end
     # ユーザーの登録しているレコード情報を全て取得
-    @all_usr_data = Record.where(user_id: current_user.id).order('created_at DESC')
-    
+    @all_usr_records = Record.where(user_id: current_user.id).order('created_at DESC')
+    @rcd_num = @all_usr_records.count
   end
 
   def new

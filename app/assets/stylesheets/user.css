@@ -47,16 +47,18 @@
   text-align: right;
 }
 
+
 @media screen and (max-width: 769px){
   .nav-justified>li {
       float: left;
   }
 }
-
-/*********** chart ***********/
+/********************************/
+/*          chart               */
+/********************************/
 #chart {
   width: 100%;
-  height: 200px;    
+  height: 400px;    
   margin: 20px auto 0px;
   border: 1px solid #ECEFF1;
 }
@@ -66,7 +68,25 @@
   margin: auto;
 }
 
+#chart#week-chart,
+canvas#month-chart,
+canvas#month3-chart,
+canvas#month6-chart{
+  height: 35px;
+}
 
+@media screen and (max-width: 460px){
+  #chart#week-chart,
+  canvas#month-chart,
+  canvas#month3-chart,
+  canvas#month6-chart{
+    height: 100px;
+  }
+}
+
+/********************************/
+/*          history             */
+/********************************/
 #history {
   /*border: 1px solid #ECEFF1;*/
   /*width: 85vw;*/
@@ -74,7 +94,9 @@
   color: gray;
   margin: 20px 0;
 }
-
+table {
+  table-layout: fixed;
+}
 
 /********************************/
 /*              tab             */
@@ -121,7 +143,7 @@ input[name="tab_item"] {
 
 
 /*選択されているタブのコンテンツのみを表示*/
-#all:checked ~ #all_content,
+#all:checked ~ #week_content,
 #month:checked ~ #month_content,
 #threemonth:checked ~ #threemonth_content,
 #sixmonth:checked ~ #sixmonth_content {
