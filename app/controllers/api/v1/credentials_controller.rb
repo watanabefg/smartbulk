@@ -1,4 +1,4 @@
-class Api::V1::CredentialsController < ApiController
+class Api::V1::CredentialsController < Api::V1::ApiController
     # loginメソッドを外部から呼び出す際にdoorkeeperで認証処理する
     before_action :doorkeeper_authorize!
     respond_to :json

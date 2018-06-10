@@ -44,6 +44,7 @@ gem 'oauth2'
 gem 'omniauth-oauth2'
 
 gem 'omniauth-twitter'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

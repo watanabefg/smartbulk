@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       # another api routes
       get '/me' => "credentials#me"
+      resources :talks, only: %i(create)
     end
   end
   
   #mount Alexa::Engine, at: "/alexa"
-  resources :talks, only: %i(create)
 end
