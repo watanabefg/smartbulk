@@ -6,7 +6,7 @@
 <% hst_weight, hst_bodyfp, hst_date, hst_wper, hst_fper =  get_history_dat %>
 
 <!--<h4>History</h4>-->
-<table class="table table-condensed">
+<table class="unstriped">
   <tr>
     <th class="text-center">Date</th>
     <th class="text-center">Weight</th>
@@ -17,10 +17,10 @@
   <% 5.times do |i| %>
     <tr>
       <td class="text-center"><%= hst_date[i] %></td>
-      <td class="text-center"><%= hst_weight[i] %> kg</td>
-      <td class="text-center"><%= sprintf("%+.1f",hst_wper[i]) %> kg</td>
-      <td class="text-center"><%= hst_bodyfp[i] %> %</td>
-      <td class="text-center"><%= sprintf("%+.1f",hst_fper[i]) %> %</td>
+      <td class="text-center"><%= hst_weight[i] %><small>kg</small></td>
+      <td class="text-center"><%= sprintf("%+.1f",hst_wper[i]) %></td>
+      <td class="text-center"><%= hst_bodyfp[i] %><small>%</small></td>
+      <td class="text-center"><%= sprintf("%+.1f",hst_fper[i]) %></td>
     </tr>
   <% end %>
 </table>    
