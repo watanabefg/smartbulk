@@ -4,34 +4,25 @@ module UsersHelper
     bodyfatPer = [] 
     date = [] 
   
-    rec_num = 0   #取得するレコードの数
-    cnt = 0
-    
     case scale
       when "week" then
-        rec_num = 7      
+        records = @week_user_records
       when "month" then
-        rec_num = 31
+        records = @month_user_records
       when "three_month" then
-        rec_num = 90
+        records = @month3_user_records
       when "six_month" then
-        rec_num = 183
+        records = @month6_user_records
       else
-        rec_num = 7   #Fail 
+        records = @week_user_records #Fail 
     end
     
     # Recordインスタンスから体重、体脂肪率、日付の情報を取得
-    @all_usr_records.each do |record| 
+    records.each do |record| 
        weight.push(record.weight)   
        bodyfatPer.push(record.fatPer) 
        md = record.created_at.strftime("%-m/%-d") 
        date.push(md)  
-       cnt = cnt + 1
-       
-       #week month 3month 6month の設定によって取得レコード数を切り替え
-       if cnt == rec_num then
-         break
-       end
     end 
     
     return  weight, bodyfatPer, date
