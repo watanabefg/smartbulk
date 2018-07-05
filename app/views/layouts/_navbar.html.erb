@@ -1,26 +1,19 @@
-<header>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Smartbulk</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+  <div class="title-bar-title">Smartbulk</div>
+</div>
+
+<div class="top-bar" id="example-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Smartbulk</li>
           <% if user_signed_in? %>
-                <li><%= link_to 'My profile', user_path(current_user) %></li>
-                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'My profile', user_path(current_user) %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Signup', new_user_registration_path %></li>
             <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+    </ul>
+  </div>
+</div>

@@ -75,14 +75,6 @@ canvas#month6-chart{
   height: 35px;
 }
 
-@media screen and (max-width: 460px){
-  #chart#week-chart,
-  canvas#month-chart,
-  canvas#month3-chart,
-  canvas#month6-chart{
-    height: 100px;
-  }
-}
 
 /********************************/
 /*          history             */

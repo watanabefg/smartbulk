@@ -41,16 +41,14 @@ module UsersHelper
     tmp_fp = 0
     
     @all_usr_records.each do |record| 
-      if cnt != HISTORY_DSP_MAX then
-        weight.push(record.weight)   
-        bodyfatPer.push(record.fatPer) 
-        
-        md = record.created_at.strftime("%-m/%-d") 
-        date.push(md)  
-      end
+      weight.push(record.weight)   
+      bodyfatPer.push(record.fatPer) 
+      
+      md = record.created_at.strftime("%-m/%-d") 
+      date.push(md)  
       
       # Recordが一つしかない場合は変化率0を代入
-      if (@rcd_num <= HISTORY_DSP_MAX) && (cnt == @rcd_num - 1) then
+      if (@rcd_num - 1 == 0) then
         weight_per.push(0)
         bodyfp_per.push(0)
         break
@@ -68,10 +66,6 @@ module UsersHelper
       tmp_w  = record.weight
       tmp_fp = record.fatPer
             
-      if cnt == HISTORY_DSP_MAX then
-        break
-      end
-      
       cnt = cnt + 1
     end     
     
