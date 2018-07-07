@@ -40,10 +40,10 @@
 .user-dat #data-area #unit{
   font-size: 20px;
 }
-.user-dat #data-wrap #kind {
+.user-dat #data-wrap .kind {
   text-align: center;
 }
-.user-dat #data-wrap #more {
+.user-dat #data-wrap .more {
   text-align: right;
 }
 

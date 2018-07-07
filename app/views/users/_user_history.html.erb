@@ -1,11 +1,10 @@
 <% hst_weight = [] %>
-<% hst_bodyfp = [] %>
+<% hst_bodyFatPer = [] %>
 <% hst_date = [] %>
-<% hst_wper = [] %>
-<% hst_fper = [] %>
-<% hst_weight, hst_bodyfp, hst_date, hst_wper, hst_fper =  get_history_dat %>
+<% hst_weight_per = [] %>
+<% hst_bodyFatPer_per = [] %>
+<% hst_weight, hst_bodyFatPer, hst_date, hst_weight_per, hst_bodyFatPer_per =  get_history_dat %>
 
-<!--<h4>History</h4>-->
 <table class="unstriped">
   <tr>
     <th class="text-center">Date</th>
@@ -14,13 +13,13 @@
     <th class="text-center">Body fat Percentage</th>
     <th class="text-center">Change</th>
   </tr>
-  <% 5.times do |i| %>
+  <% hst_weight.count.times do |i| %>
     <tr>
       <td class="text-center"><%= hst_date[i] %></td>
       <td class="text-center"><%= hst_weight[i] %><small>kg</small></td>
-      <td class="text-center"><%= sprintf("%+.1f",hst_wper[i]) %></td>
-      <td class="text-center"><%= hst_bodyfp[i] %><small>%</small></td>
-      <td class="text-center"><%= sprintf("%+.1f",hst_fper[i]) %></td>
+      <td class="text-center"><%= hst_weight_per[i].nil? ? "-" : sprintf("%+.1f",hst_weight_per[i]) %></td>
+      <td class="text-center"><%= hst_bodyFatPer[i] %><small>%</small></td>
+      <td class="text-center"><%= hst_bodyFatPer_per[i].nil? ? "-" : sprintf("%+.1f",hst_bodyFatPer_per[i]) %></td>
     </tr>
   <% end %>
-</table>    
+</table>

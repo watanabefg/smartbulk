@@ -2,7 +2,7 @@
 <% bodyfatPer = [] %>
 <% date = [] %>
 <% weight, bodyfatPer, date =  get_user_record('week') %>
-<% wmax = weight.max + 10 %>
+<% wmax = weight.max.to_f + 10 %>
 <script type="text/javascript">
   var weekChart = document.getElementById("week-chart");
   new Chart(weekChart, {
@@ -44,6 +44,7 @@
   });
   
   <% weight, bodyfatPer, date =  get_user_record('month') %>
+  <% wmax = weight.max.to_f + 10 %>
   var monthChart = document.getElementById("month-chart");
   new Chart(monthChart, {
     type: 'line', 
@@ -83,6 +84,7 @@
     }
   });  
   <% weight, bodyfatPer, date =  get_user_record('three_month') %>
+  <% wmax = weight.max.to_f + 10 %>
   var month3Chart = document.getElementById("month3-chart");
   new Chart(month3Chart, {
     type: 'line', 
@@ -122,6 +124,7 @@
     }
   });  
   <% weight, bodyfatPer, date =  get_user_record('six_month') %>
+  <% wmax = weight.max.to_f + 10 %>
   var month6Chart = document.getElementById("month6-chart");
   new Chart(month6Chart, {
     type: 'line', 
