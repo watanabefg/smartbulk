@@ -56,23 +56,29 @@
 /********************************/
 /*          chart               */
 /********************************/
-#chart {
+.chartWrapper {
+    position: relative;
+}
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+.chart {
   width: 100%;
+  overflow-x: scroll;
   height: auto;    
   margin: 20px auto 0px;
   border: 1px solid #ECEFF1;
 }
-#chart p{
+
+.chart p{
   padding-top: calc(200px / 2 - 30px);
   text-align: center;
   margin: auto;
-}
-
-#chart#week-chart,
-canvas#month-chart,
-canvas#month3-chart,
-canvas#month6-chart{
-  height: 35px;
 }
 
 
@@ -105,7 +111,7 @@ table {
 .tab_item {
   width: calc(100%/4);
   height: 50px;
-  background-color: #d9d9d9;
+  background-color: #ececec;
   line-height: 50px;
   font-size: 16px;
   text-align: center;
@@ -144,7 +150,6 @@ input[name="tab_item"] {
 
 /*選択されているタブのスタイルを変える*/
 .tabs input:checked + .tab_item {
-  background-color: #8190a5
-;
+  background-color: #141d9e;
   color: #fff;
 }

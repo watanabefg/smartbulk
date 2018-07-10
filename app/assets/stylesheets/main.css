@@ -46,3 +46,23 @@ margin-right: 1rem;
 .or-border:after {
 margin-left: 1rem;
 }
+
+.button {
+  background-color: #1b17ba;
+}
+
+.button:focus, .button:hover {
+  background-color: #141d9e;
+}
+
+.top-bar, .top-bar ul {
+  background-color:#eeeff1;
+}
+
+a {
+  color: #ce5b14;
+}
+
+a:focus, a:hover {
+  color: #a03714;
+}
