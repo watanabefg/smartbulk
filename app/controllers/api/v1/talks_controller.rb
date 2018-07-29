@@ -61,7 +61,7 @@ class Api::V1::TalksController < Api::V1::ApiController#Grape::API
             weight = request.session.attributes[:weight]
             bodyfatpercentage = getBodyFatPercentage(request)
             
-            if bodyfatpercentage == 0 then
+            if bodyfatpercentage == 0 || bodyfatpercentage >= 100 then
               response.add_speech("体脂肪率は何パーセントですか？")
               session_end = false
             else
