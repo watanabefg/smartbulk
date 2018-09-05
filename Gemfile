@@ -39,7 +39,7 @@ gem 'alexa_rubykit'
 # 認証機能を使うためのgem
 gem 'devise'
 gem 'omniauth'
-gem 'doorkeeper'
+gem 'doorkeeper', '>= 4.3.2'
 gem 'oauth2'
 gem 'omniauth-oauth2'
 
