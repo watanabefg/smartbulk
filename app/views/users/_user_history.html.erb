@@ -5,21 +5,12 @@
 <% hst_bodyFatPer_per = [] %>
 <% hst_weight, hst_bodyFatPer, hst_date, hst_weight_per, hst_bodyFatPer_per =  get_history_dat %>
 
-<table class="unstriped">
-  <tr>
-    <th class="text-center">Date</th>
-    <th class="text-center">Weight</th>
-    <th class="text-center">Change</th>
-    <th class="text-center">Body fat Percentage</th>
-    <th class="text-center">Change</th>
-  </tr>
+<div class="activities">
   <% hst_weight.count.times do |i| %>
-    <tr>
-      <td class="text-center"><%= hst_date[i] %></td>
-      <td class="text-center"><%= hst_weight[i] %><small>kg</small></td>
-      <td class="text-center"><%= hst_weight_per[i].nil? ? "-" : sprintf("%+.1f",hst_weight_per[i]) %></td>
-      <td class="text-center"><%= hst_bodyFatPer[i] %><small>%</small></td>
-      <td class="text-center"><%= hst_bodyFatPer_per[i].nil? ? "-" : sprintf("%+.1f",hst_bodyFatPer_per[i]) %></td>
-    </tr>
+  <div class="activity grid-x">
+    <div class="cell small-2"><i class="fas fa-weight fa-2x"></i></div>
+    <div class="cell small-8"><%= hst_weight[i] %> <small>kg</small><br /><small><%= hst_bodyFatPer[i] %> %</small></div>
+    <div class="cell small-2"><i class="fas fa-calendar-alt"></i><br /><small><%= hst_date[i] %></small></div>
+  </div>
   <% end %>
-</table>
+</div>

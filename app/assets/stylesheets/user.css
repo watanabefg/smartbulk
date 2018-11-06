@@ -92,6 +92,15 @@
   color: gray;
   margin: 20px 0;
 }
+
+.activity {
+  padding:8px;
+  border-bottom:1px solid #eee;
+}
+.activity .fas {
+  color:#141d9e;
+}
+
 table {
   table-layout: fixed;
 }

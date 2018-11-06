@@ -20,6 +20,20 @@ describe Record, type: :model do                    # Record モデルについ�
     
   end
   it "is invalid without a user_id"      # user_id が無いと無効である
+    user = User.new(
+        name: 'test',
+        email: 'google@gmail.com',
+        password_digest: 'f2j303jfef',
+        goalWeight: 49.5,
+        goalFatPer: 10.0,
+        purpose: 'test'
+        )
+    user.save
+    record = Record.new(
+        weight: 65.3,
+        fatPer: 12.1
+    )
+    expect(record).to be_invalid
   it "is invalid without a weight"      # weight が無いと無効である
   it "is invalid without a fatPer"      # fatPer が無いと無効である
 end
