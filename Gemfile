@@ -46,6 +46,9 @@ gem 'omniauth-oauth2'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 
+# SSL化
+gem 'heroku-rack-ssl-enforcer-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
